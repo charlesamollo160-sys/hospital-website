@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City General Hospital | Care You Can Trust</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body> 
+    <style>
+      :root {
+    --primary: #0066FF;
+    --secondary: #00D2FF;
+    --dark: #0F172A;
+    --glass: rgba(255, 255, 255, 0.85);
+}
+
+.hero-visual {
+    position: relative;
+    padding: 120px 0;
+    min-height: 85vh;
+    background: radial-gradient(circle at top right, #e0f2fe, #ffffff);
+    overflow: hidden;
+}
+
+/* Background Decoration (The "Attractive" Blobs) */
+.hero-visual::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 500px;
+    height: 500px;
+    background: var(--secondary);
+    filter: blur(120px);
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.hero-main {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+/* Typography Enhancements */
+.badge-top {
+    background: #E0E7FF;
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 4rem;
+    color: var(--dark);
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #475569;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* Glassmorphism Search Bar */
+.glass-search {
+    display: flex;
+    background: var(--glass);
+    backdrop-filter: blur(15px); /* This creates the frosted glass effect */
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(255,255,255,0.5);
+    gap: 15px;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 12px;
+}
+
+.input-group i { color: var(--primary); margin-right: 10px; }
+
+.input-group input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* Glow Button Effect */
+.btn-glow {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0 30px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 102, 255, 0.2);
+}
+
+.btn-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(0, 102, 255, 0.4);
+    background: #0052cc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .glass-search { flex-direction: column; }
+    h1 { font-size: 2.5rem; }
+}  
+    </style>
+
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">CITY<span>HEALTH</span></a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Find%20a%20Doctor.html">Find a Doctor</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="Locations.html">Locations</a></li>
+            <li><a href="PatientPortal.html" class="btn-portal">Patient Portal</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-overlay">
+            <h1>Your Health, Our Priority.</h1>
+            <p>Providing world-class medical expertise with a human touch.</p>
+            
+            <div class="search-container">
+                <input type="text" placeholder="Search doctors, specialties, or symptoms...">
+                <button type="submit"><i class="fas fa-search"></i> Search</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="action-grid">
+        <div class="card">
+            <i class="fas fa-user-md"></i>
+            <h3>Find a Doctor</h3>
+            <p>Search our network of specialists</p>
+            <a href="Find%20a%20Doctor.html" class="card-btn">Browse Doctors</a>
+        </div>
+        <div class="card">
+            <i class="fas fa-heartbeat"></i>
+            <h3>Services</h3>
+            <p>Explore our medical services</p>
+            <a href="Services.html" class="card-btn">View Services</a>
+        </div>
+        <div class="card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Locations</h3>
+            <p>Find a hospital near you</p>
+            <a href="Locations.html" class="card-btn">Our Locations</a>
+        </div>
+        <div class="card">
+            <i class="fas fa-laptop"></i>
+            <h3>Patient Portal</h3>
+            <p>Access your medical records</p>
+            <a href="PatientPortal.html" class="card-btn">Sign In</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 City General Hospital. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

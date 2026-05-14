@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locations | City General Hospital</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <style>
+        /* Location Section Container */
+.locations-section {
+    padding: 60px 5%;
+    background-color: #f4f7f9;
+}
+
+.section-title {
+    color: var(--primary-blue);
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* Flexbox Wrapper */
+.locations-wrapper {
+    display: flex;
+    gap: 30px;
+    height: 600px; /* Fixed height for the location area */
+}
+
+/* Left Side: Scrollable List */
+.location-list {
+    flex: 1;
+    overflow-y: auto; /* Allows scrolling through many clinics */
+    padding-right: 15px;
+}
+
+/* Location Card Styles */
+.location-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.location-card:hover {
+    border-color: var(--soft-teal);
+    transform: translateX(5px);
+}
+
+.location-card.active {
+    border-color: var(--primary-blue);
+    background-color: #eff6ff;
+}
+
+.location-info h3 {
+    margin-top: 0;
+    color: var(--primary-blue);
+}
+
+.location-info p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.location-info i {
+    color: var(--soft-teal);
+    width: 20px;
+    margin-right: 10px;
+}
+
+/* Action Buttons */
+.btn-directions {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-directions:hover {
+    background: #003366;
+}
+
+/* Right Side: Map Styling */
+.map-container {
+    flex: 1.5;
+    background: #ddd;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#map-mock {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e5e7eb;
+    color: #9ca3af;
+    font-size: 1.2rem;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .locations-wrapper {
+        flex-direction: column;
+        height: auto;
+    }
+    .map-container {
+        height: 300px;
+        order: -1; /* Put map on top for mobile */
+    }
+}
+</style>
+
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">CITY<span>HEALTH</span></a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Find%20a%20Doctor.html">Find a Doctor</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="Locations.html">Locations</a></li>
+            <li><a href="PatientPortal.html" class="btn-portal">Patient Portal</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-overlay">
+            <h1>Our Locations</h1>
+            <p>Visit one of our 12 convenient locations across the city.</p>
+        </div>
+    </header>
+
+    <section class="content">
+        <div class="location-card">
+            <h3>Downtown Medical Center</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Downtown</p>
+            <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+            <p><i class="fas fa-clock"></i> Mon-Fri: 8AM-8PM | Sat-Sun: 9AM-5PM</p>
+        </div>
+        <div class="location-card">
+            <h3>Riverside Hospital</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 456 River Road, Riverside</p>
+            <p><i class="fas fa-phone"></i> (555) 234-5678</p>
+            <p><i class="fas fa-clock"></i> 24/7 Emergency Services</p>
+        </div>
+        <div class="location-card">
+            <h3>North Campus Clinic</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 789 North Avenue, North Park</p>
+            <p><i class="fas fa-phone"></i> (555) 345-6789</p>
+            <p><i class="fas fa-clock"></i> Mon-Sun: 7AM-10PM</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 City General Hospital. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

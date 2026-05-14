@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Portal | City General Hospital</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+.portal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+    background: #f0f4f8;
+}
+
+.login-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-group { margin-bottom: 20px; }
+
+.form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* Ensures padding doesn't break layout */
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-login:hover { background: #003366; }
+
+.info-sidebar {
+    margin-left: 40px;
+    max-width: 300px;
+    color: var(--primary-blue);
+}
+
+.info-sidebar i { margin-right: 10px; color: var(--soft-teal); }
+.portal-actions {
+    display: grid;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.portal-dashboard {
+    display: grid;
+    gap: 30px;
+}
+
+.portal-welcome {
+    background: white;
+    padding: 18px 22px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.hidden { display: none; }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.action-card i {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.action-link {
+    margin-top: 20px;
+    display: inline-block;
+    color: white;
+    background: var(--primary-blue);
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.action-link:hover { background: #003366; }
+
+.hidden { display: none; }
+
+.portal-welcome {
+    background: white;
+    padding: 18px 22px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.portal-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    margin-top: 30px;
+}
+
+.portal-section h4 {
+    margin-top: 0;
+    color: var(--primary-blue);
+}
+
+.details-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.details-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #e8edf2;
+}
+
+.details-list li:last-child { border-bottom: none; }
+
+.section-button {
+    margin-top: 15px;
+    display: inline-block;
+    color: var(--primary-blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.section-button:hover { text-decoration: underline; }
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .portal-container { flex-direction: column; }
+    .info-sidebar { margin-left: 0; margin-top: 30px; text-align: center; }
+}
+</style>  
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">CITY<span>HEALTH</span></a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Find%20a%20Doctor.html">Find a Doctor</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="Locations.html">Locations</a></li>
+            <li><a href="PatientPortal.html" class="btn-portal">Patient Portal</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-overlay">
+            <h1>Patient Portal</h1>
+            <p>Securely access your medical information and manage your care.</p>
+        </div>
+    </header>
+
+    <section class="content">
+        <div id="loginSection" class="login-container">
+            <h2>Sign In to Your Account</h2>
+            <form>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="submit-btn">Sign In</button>
+                <p><a href="#">Forgot password?</a></p>
+            </form>
+            <p>Don't have an account? <a href="#">Register here</a></p>
+        </div>
+
+        <div id="portalWelcome" class="portal-welcome hidden">Welcome to your secure patient portal.</div>
+
+        <div class="portal-features portal-dashboard hidden" id="portalFeatures">
+            <h3>Portal Features</h3>
+            <div class="portal-actions">
+                <div class="action-card">
+                    <div>
+                        <i class="fas fa-file-medical"></i>
+                        <h4>View Patient Records</h4>
+                        <p>Access your medical history, diagnoses, and visit summaries in one secure place.</p>
+                    </div>
+                    <a class="action-link" href="#records">Open Records</a>
+                </div>
+                <div class="action-card">
+                    <div>
+                        <i class="fas fa-calendar-check"></i>
+                        <h4>Manage Appointments</h4>
+                        <p>Schedule, reschedule, or cancel appointments with our care team.</p>
+                    </div>
+                    <a class="action-link" href="#appointments">Manage Appointments</a>
+                </div>
+                <div class="action-card">
+                    <div>
+                        <i class="fas fa-flask"></i>
+                        <h4>View Lab Results</h4>
+                        <p>Review your latest test results and follow-up recommendations.</p>
+                    </div>
+                    <a class="action-link" href="#labs">View Lab Results</a>
+                </div>
+                <div class="action-card">
+                    <div>
+                        <i class="fas fa-credit-card"></i>
+                        <h4>Pay Bills Online</h4>
+                        <p>See outstanding balances and pay safely through our portal.</p>
+                    </div>
+                    <a class="action-link" href="#billing">Pay Bills</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content portal-section hidden" id="records">
+        <h3>Patient Records</h3>
+        <p>Review your current medical summary, allergies, medications, and history.</p>
+        <ul class="details-list">
+            <li><strong>Patient:</strong> John Doe</li>
+            <li><strong>Primary Care Physician:</strong> Dr. Emily Carter</li>
+            <li><strong>Active Medications:</strong> Atorvastatin, Lisinopril</li>
+            <li><strong>Allergies:</strong> Penicillin</li>
+            <li><strong>Recent Visit:</strong> Annual wellness exam on April 15, 2026</li>
+        </ul>
+        <a class="section-button" href="#appointments">Next: Manage Appointments</a>
+    </section>
+
+    <section class="content portal-section hidden" id="appointments">
+        <h3>Appointments</h3>
+        <p>Upcoming visits and appointment management tools.</p>
+        <ul class="details-list">
+            <li><strong>Next appointment:</strong> June 10, 2026 at 10:00 AM</li>
+            <li><strong>Provider:</strong> Dr. Olivia Hayes</li>
+            <li><strong>Location:</strong> Main Campus, Suite 210</li>
+            <li><strong>Purpose:</strong> Follow-up consult</li>
+        </ul>
+        <a class="section-button" href="#billing">View Billing Options</a>
+    </section>
+
+    <section class="content portal-section hidden" id="labs">
+        <h3>Lab Results</h3>
+        <p>Securely view the latest lab findings and recommendations.</p>
+        <ul class="details-list">
+            <li><strong>Cholesterol:</strong> 185 mg/dL (Normal)</li>
+            <li><strong>Blood Glucose:</strong> 98 mg/dL (Normal)</li>
+            <li><strong>Complete Blood Count:</strong> All values within normal range</li>
+            <li><strong>Latest update:</strong> May 2, 2026</li>
+        </ul>
+        <a class="section-button" href="#records">Back to Records</a>
+    </section>
+
+    <section class="content portal-section hidden" id="billing">
+        <h3>Billing & Payments</h3>
+        <p>View your outstanding balance and pay your bill online quickly.</p>
+        <ul class="details-list">
+            <li><strong>Outstanding balance:</strong> $245.00</li>
+            <li><strong>Due date:</strong> June 20, 2026</li>
+            <li><strong>Last payment:</strong> $120.00 on April 28, 2026</li>
+        </ul>
+        <a class="action-link" href="#">Pay Now</a>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 City General Hospital. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const loginForm = document.querySelector('.login-container form');
+        const portalElements = [
+            document.getElementById('portalFeatures'),
+            document.getElementById('records'),
+            document.getElementById('appointments'),
+            document.getElementById('labs'),
+            document.getElementById('billing'),
+            document.getElementById('portalWelcome')
+        ];
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('email');
+            const email = emailInput.value.trim();
+            if (!email) return;
+
+            document.getElementById('portalWelcome').textContent = `Welcome, ${email}`;
+            document.getElementById('loginSection').classList.add('hidden');
+            portalElements.forEach(el => el.classList.remove('hidden'));
+            document.getElementById('portalWelcome').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

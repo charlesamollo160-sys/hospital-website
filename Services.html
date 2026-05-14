@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | City General Hospital</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">CITY<span>HEALTH</span></a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Find%20a%20Doctor.html">Find a Doctor</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="Locations.html">Locations</a></li>
+            <li><a href="PatientPortal.html" class="btn-portal">Patient Portal</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-overlay">
+            <h1>Our Services</h1>
+            <p>Comprehensive healthcare across multiple specialties.</p>
+        </div>
+    </header>
+<style>
+    .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.service-item {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 74, 153, 0.1);
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    background: var(--light-bg);
+    color: var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+}
+
+.text-link {
+    color: var(--soft-teal);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+}
+</style>
+     class="services-page">
+    <div class="container">
+        <h2 class="text-center">Our Specialized Care</h2>
+        <div class="services-grid">
+            
+            <div class="service-item">
+                <div class="icon-circle"><i class="fas fa-heartbeat"></i></div>
+                <h4>Cardiology</h4>
+                <p>Comprehensive heart care including diagnostics and surgery.</p>
+                <a href="#" class="text-link">Learn More →</a>
+            </div>
+
+            <div class="service-item">
+                <div class="icon-circle"><i class="fas fa-baby"></i></div>
+                <h4>Maternity</h4>
+                <p>Supporting you through every stage of your journey to parenthood.</p>
+                <a href="#" class="text-link">Learn More →</a>
+            </div>
+
+            <div class="service-item">
+                <div class="icon-circle"><i class="fas fa-brain"></i></div>
+                <h4>Neurology</h4>
+                <p>Advanced treatment for disorders of the nervous system.</p>
+                <a href="#" class="text-link">Learn More →</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <footer class="footer">
+        <p>&copy; 2026 City General Hospital. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
